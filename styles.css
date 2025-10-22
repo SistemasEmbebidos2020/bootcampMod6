@@ -1,0 +1,199 @@
+/* --- ESTILOS GENERALES Y MOBILE-FIRST (PARA TELÉFONOS) --- */
+
+/* Importar una fuente legible para un look más moderno */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #0056b3; /* Azul corporativo */
+    --secondary-color: #007bff; /* Azul más brillante para KPIs y acentos */
+    --background-color: #f4f7f9; /* Un gris muy claro para el fondo */
+    --card-background: #ffffff; /* Blanco para las tarjetas */
+    --text-color: #333333; /* Color de texto principal */
+    --light-text-color: #666666; /* Color de texto secundario */
+    --border-radius: 12px; /* Bordes redondeados consistentes */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: var(--light-text-color);
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+section {
+    background-color: var(--card-background);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* --- ESTILOS PARA LOS KPIs --- */
+.kpi-container {
+    display: grid;
+    /* Por defecto, una columna en móviles */
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.kpi {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.kpi h3 {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: var(--light-text-color);
+    font-weight: 400;
+}
+
+.kpi .value {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* --- ESTILOS PARA GRÁFICAS --- */
+.chart-container {
+    position: relative;
+    height: 400px; /* Altura inicial, puede ajustarse */
+}
+
+/* --- ESTILOS PARA ENGAGEMENT Y TEMAS --- */
+.engagement-container,
+.topics-container {
+    display: grid;
+    /* Una columna por defecto */
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Estilos para las tarjetas que se insertarán con JS */
+.engagement-card, .topic-card {
+    background: #f9f9f9;
+    border-left: 5px solid var(--secondary-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.engagement-card:hover, .topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.topic-card .title {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.topic-card .detail, .topic-card .challenge {
+    font-size: 0.95em;
+}
+
+.topic-card .challenge {
+    color: #c0392b; /* Un rojo para destacar el desafío */
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* --- ESTILOS PARA LA CONCLUSIÓN --- */
+.conclusion {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.conclusion h2 {
+    color: white;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.conclusion p {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVE DESIGN --- */
+
+/* --- Estilos para Tabletas (a partir de 768px) --- */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    .kpi-container {
+        /* Dos columnas en tabletas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .engagement-container,
+    .topics-container {
+        /* Dos columnas para las tarjetas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-container {
+        height: 450px;
+    }
+}
+
+/* --- Estilos para Escritorio (a partir de 1024px) --- */
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 3.2em;
+    }
+
+    .kpi-container {
+        /* Cuatro columnas en escritorio */
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .topics-container {
+        /* Mantenemos dos columnas para mejor legibilidad del texto largo */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .chart-container {
+        height: 500px;
+    }
+}
