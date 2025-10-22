@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+.section-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Sección de KPIs */
+.kpi-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+.kpi {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px; /* Asegura que los KPIs no se compriman demasiado */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.kpi h3 {
+    margin-top: 0;
+    color: #3498db;
+    font-size: 1em;
+}
+
+.kpi .value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+/* Sección del Gráfico/Mapa de Calor */
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+/* Sección de Interacción */
+.engagement-container {
+    margin-top: 30px;
+}
+
+.tweet {
+    background: #f8f9fa;
+    border-left: 5px solid #3498db;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 0 5px 5px 0;
+}
+
+.tweet p {
+    font-style: italic;
+    margin: 0 0 10px 0;
+}
+
+.tweet-stats {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Sección de Temas */
+.topics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background: #fdfefe;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.topic-card h3 {
+    color: #3498db;
+    margin-top: 0;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.topic-card p {
+    line-height: 1.6;
+}
+
+/* Sección de Conclusión */
+.conclusion {
+    background-color: #34495e;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.conclusion h2 {
+    margin-top: 0;
+}
